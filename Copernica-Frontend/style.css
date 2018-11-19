@@ -76,7 +76,7 @@ body {
     margin: 14px;
     border: 3px solid transparent;
     border-radius: 50%;
-    transition: rotate 2s;
+    transition: transform 2s border;
    
 }
 
@@ -88,7 +88,7 @@ body {
 }
 
 .avatar.animate {
-    border-radius: 3px solid #7aa1b2;
+    border: 3px solid #7aa1b2;
     transform: rotate(90);
 
 }
