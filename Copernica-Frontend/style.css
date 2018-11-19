@@ -2,11 +2,6 @@
 Coperina exercise
 ******************************/
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
     color: #555555;
@@ -36,6 +31,39 @@ body {
     border: 1px solid #9ba0a3;
 }
 
+.overlay_top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+    height: 260px;
+    width: 260px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #2c3033;
+    border-radius: 50%;
+    border: 1px solid transparent;
+ }
+ .overlay_top:hover {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+    height: 260px;
+    width: 260px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    background-color: #2c3033;
+    border-radius: 50%;
+    border: 1px solid transparent;
+ }
 .popover {
     display: block;
     margin-left: auto;
@@ -70,32 +98,36 @@ body {
 .avatar_img_list {
     width: 60px;
     height: 60px;
+    position: relative;
     border-radius: 50%;
     border: 3px solid transparent;
     margin: 14px;
 }
 
-.avatar_img_list:hover {
-    border: 3px solid #9ba0a3;
-
-}
-
-/*.overlay {
+.overlay {
     width: 60px;
+    height: 60px;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    margin: 14px; 
+    
+    
+    /*width: 60px;
     height: 60px;
     position: absolute;
     margin: 14px;
     color: #7aa1b2;
     opacity: 0.8;
     border: 3px solid #9ba0a3;
-    border-radius: 50%;
+    border-radius: 50%;*/
     }
 
 .overlay:hover {
     color: #7aa1b2;
     opacity: 0.8;
 }
-*/
+
 
 /*.avatar_img_list:focus {
     color: rgb(255, 0, 4);
