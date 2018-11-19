@@ -1,6 +1,8 @@
 
 
 // loading animation
+// add spinner to each avatar
+// appear when clicked
 
 // switch image
 
@@ -19,11 +21,12 @@
 
 
 var appController = (function(){
-    var elements = {
+    var loading, elements = {
         avatar: '.selected_avatar',
         popover: '.popover',
         selectAvatar: '.avatar',
         shown: false,
+    
     }
 
     var setupEventListeners = function()
@@ -33,6 +36,9 @@ var appController = (function(){
         }
 
        document.querySelector(elements.selectAvatar).addEventListener('click', loadAnimation);
+       
+       
+        
     }
 
 
@@ -52,11 +58,14 @@ var appController = (function(){
     }
 
     loadAnimation = function(el){
-        console.log(el);
+        
         switch(el){
             case '1':
             document.getElementById('1').classList.add("animate");
-            console.log('added');
+            loading = document.getElementById('1').getBoundingClientRect();
+            console.log(loading);
+            //console.log('y= ' + loading.top + 'x=' + loading.left);
+            setLoading();
             break;
             case '2':
             document.getElementById('2').classList.add("animate");
@@ -75,6 +84,14 @@ var appController = (function(){
             break;
 
         }
+    }
+
+    setLoading = function(){
+        document.querySelector('.spinner').style.left = (document.querySelector('.avatar_selection').style.right - loading.left) + 'px';
+        document.querySelector('.spinner').style.top = loading.top + 'px';
+        console.log(document.querySelector('.spinner').style.top);
+        //ring.x = avatar_selection.x - loading.left 
+        // ring.y = loading.top
     }
 
 return {

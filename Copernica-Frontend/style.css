@@ -76,7 +76,17 @@ body {
     margin: 14px;
     border: 3px solid transparent;
     border-radius: 50%;
-    transition: transform 2s border;
+    transition: transform 2s border border-top animation;
+   
+}
+#1 {
+    display: inline;
+    width: 60px;
+    height: 60px;
+    margin: 14px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    transition: transform 2s border border-top animation;
    
 }
 
@@ -89,8 +99,25 @@ body {
 
 .avatar.animate {
     border: 3px solid #7aa1b2;
+    border-top: 3px solid #f9f9f9;
     transform: rotate(90);
+    animation: spin 2s linear infinite;
+}
 
+.spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;    
+    border: 3px solid blue;
+    border-top: 3px solid red;
+    border-radius: 50%;  
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
 }
 
 
