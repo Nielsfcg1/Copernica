@@ -1,0 +1,105 @@
+/******************************
+Coperina exercise
+******************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #555555;
+    font-family: Open Sans;
+    font-size: 16px;
+    position: relative;
+    height: 100vh;
+    font-weight: 400;
+    background-color: #f0f0f0;
+}
+
+
+.avatar_img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+   
+
+   
+}
+
+.avatar_img:hover{
+    border: 1px solid #9ba0a3;
+}
+
+.popover {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 480px;
+    height: 300px;
+    border-radius: 2px;
+    background: #2c3033;
+    box-shadow: 2px 2px 10px #666;
+    padding: 14px; 
+       
+}
+
+.popover_triangle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #2c3033;
+    margin-top: 20px;       
+}
+
+.popover_title {
+    color: #f9f9f9;   
+    font-size: 26px;
+    text-align: center;
+}
+
+.avatar_img_list {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    margin: 14px;
+}
+
+.avatar_img_list:hover {
+    border: 3px solid #9ba0a3;
+
+}
+
+/*.overlay {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin: 14px;
+    color: #7aa1b2;
+    opacity: 0.8;
+    border: 3px solid #9ba0a3;
+    border-radius: 50%;
+    }
+
+.overlay:hover {
+    color: #7aa1b2;
+    opacity: 0.8;
+}
+*/
+
+/*.avatar_img_list:focus {
+    color: rgb(255, 0, 4);
+}*/
+
+
+
