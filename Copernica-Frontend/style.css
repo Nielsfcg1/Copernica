@@ -43,7 +43,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    width: 280px;
+    width: 380px;
     height: 300px; 
     border-radius: 2px;
     background: #2c3033;
@@ -58,4 +58,14 @@ body {
     text-align: center;
     font-size: 26px;
 }
+
+.avatar {
+    display: inline;
+    width: 60px;
+    height: 60px;
+    margin: 14px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+}
+
 
