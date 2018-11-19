@@ -1,8 +1,7 @@
 
 
 // loading animation
-// add spinner to each avatar
-// appear when clicked
+// style border seprately
 
 // switch image
 
@@ -46,6 +45,7 @@ var appController = (function(){
     {   
         if(elements.shown === false){
             document.querySelector(elements.popover).classList.add("animate");
+            // andere class
             elements.shown = true;
         }else{
                 hideMenu();
@@ -55,6 +55,7 @@ var appController = (function(){
 
     hideMenu = function() {
         document.querySelector(elements.popover).classList.remove ('animate');
+        //is een andere class geworden
     }
 
     loadAnimation = function(el){
@@ -62,10 +63,6 @@ var appController = (function(){
         switch(el){
             case '1':
             document.getElementById('1').classList.add("animate");
-            loading = document.getElementById('1').getBoundingClientRect();
-            console.log(loading);
-            //console.log('y= ' + loading.top + 'x=' + loading.left);
-            setLoading();
             break;
             case '2':
             document.getElementById('2').classList.add("animate");
@@ -86,13 +83,7 @@ var appController = (function(){
         }
     }
 
-    setLoading = function(){
-        document.querySelector('.spinner').style.left = (document.querySelector('.avatar_selection').style.right - loading.left) + 'px';
-        document.querySelector('.spinner').style.top = loading.top + 'px';
-        console.log(document.querySelector('.spinner').style.top);
-        //ring.x = avatar_selection.x - loading.left 
-        // ring.y = loading.top
-    }
+    
 
 return {
     init: function()

@@ -69,17 +69,12 @@ body {
     font-size: 26px;
 }
 
-.avatar {
+.avatar{
+    
     display: inline;
-    width: 60px;
-    height: 60px;
-    margin: 14px;
-    border: 3px solid transparent;
-    border-radius: 50%;
-    transition: transform 2s border border-top animation;
-   
+    float: left;
 }
-#1 {
+.avatar >img{
     display: inline;
     width: 60px;
     height: 60px;
@@ -90,7 +85,8 @@ body {
    
 }
 
-.avatar:hover {
+
+.avatar >img:hover {
     color: #7aa1b2;
     opacity: 0.8;
     border: 3px solid #9ba0a3;
