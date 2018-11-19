@@ -1,22 +1,14 @@
-// placeholder avatar in the middle of the screen
 
 // click event
 
-// outline image(1px hover)
 
-// popup menu
-// groups of 4 aligned left
 
-// selection highlight
+
+
 
 // switch image
 
 // loading animation + wait timer(http request, blue 3 px, 1 second or random)
-
-// close menu
-
-// highligth avatar in menu (blue border 3px)
-// border other avatar on hover (grey 3px opacity 20%)
 
 // loopable
 
@@ -26,20 +18,48 @@
 
 // mouse cursor
 
-var popoverController = (function(){
-
-})();
-
-
-
-
-var dataController = (function(){
-
-})();
 
 
 
 
 var appController = (function(){
+    var elements = {
+        avatar: '.selected_avatar',
+        popover: '.popover',
+        shown: false,
+    }
+
+    var setupEventListeners = function()
+    {    console.log('setup');
+        if(document.querySelector(elements.popover)){
+            document.querySelector(elements.avatar).addEventListener('click', expandMenu);
+        }
+    }
+
+
+    expandMenu = function()
+    {   console.log('expandMenu');
+    if(elements.shown === false){
+        document.querySelector(elements.popover).classList.add("animate");
+        elements.shown = true;
+        }else{
+                hideMenu();
+                elements.shown = false;
+            }
+    }
+
+    hideMenu = function() {
+        document.querySelector(elements.popover).classList.remove ('animate');
+    }
+
+return {
+    init: function()
+    {
+        console.log('Application has started');
+     setupEventListeners();
+    }
+}
+
 
 })();
+appController.init();
