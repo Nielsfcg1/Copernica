@@ -5,10 +5,10 @@
 // loading animation + wait timer(http request, blue 3 px, 1 second or random
 // switch image
 // loopable
+//highlight selected avatar
 
 //**** TO DO */
 
-//highlight selected avatar
 
 //insert Jquery and ajust code
 
@@ -28,7 +28,7 @@ appController = (function(){
     
     var newAvatar = 1;
     var elements = {
-        avatar: '.selected_avatar',
+        avatar: '.current_avatar',
         popover: '.popover',
         selectAvatar: '.avatar',
         selectBorder: '.border',

@@ -13,7 +13,7 @@ body {
     width: 160px;
     height: 160px;
 }
-.selected_avatar{
+.current_avatar{
     display: inline;
     border: 1px solid transparent;
     border-radius: 50%;
@@ -21,12 +21,12 @@ body {
     height: 160px;
     
 }
-.selected_avatar:hover {
+.current_avatar:hover {
     border: 1px solid black;
     border-radius: 50%;
 }
 
-.selected_avatar.selected {
+.current_avatar.selected {
     border: 1px solid black;
     border-radius: 50%;
 }
