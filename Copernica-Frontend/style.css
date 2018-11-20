@@ -8,9 +8,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
-.page {
-
-}
 
 .your_avatar {
     display: block;
@@ -36,15 +33,14 @@ body {
     border: 1px solid black;
     border-radius: 50%;
 }
-.popover{
-    
+.popover{  
     transform: scale(0) translateY(-20px);
     transition: transform .2s;
 }
-.popover.animate{
-    display: inline;
+.popover.animate{ 
+    display: inline; 
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto;   
     transform: scale(1) translateY(20px);
     transition: all .5s;
     

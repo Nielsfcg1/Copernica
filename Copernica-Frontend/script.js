@@ -38,7 +38,14 @@ appController = (function(){
     setupEventListeners = function()
     {    
         
-        document.querySelector(elements.avatar).addEventListener('click', expandMenu);        
+        document.querySelector(elements.avatar).addEventListener('click', function() 
+        {
+            if(!elements.shown){
+                expandMenu(); 
+            } else{
+            hideMenu(); 
+            }
+        });       
         
         document.querySelector(elements.selectBorder).addEventListener('click', loadAnimation);
         
@@ -48,12 +55,9 @@ appController = (function(){
             };  
             
         document.addEventListener('click', function(event){
-            if (event.target.closest('.avatar_elements') || event.target.closest('.your_avatar')){
-                
-                expandMenu();
-            }else{
+            if ((elements.shown && !event.target.closest('.avatar_elements')) && 
+                (elements.shown && !event.target.closest('.your_avatar'))){
                 hideMenu();
-
             }
         });  
     };
@@ -91,7 +95,6 @@ appController = (function(){
 
     // el get passed from CSS div
     loadAnimation = function(el){
-        console.log(el);
         switch(el){
             case '1':
             document.getElementById('border_1').classList.add("animateBorder");
