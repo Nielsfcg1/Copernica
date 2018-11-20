@@ -61,10 +61,13 @@ var appController = (function(){
     }
 
     hideMenu = function() {
-        changeAvatar();
         document.querySelector(elements.popover).classList.remove ('animate');
-        document.querySelector(elements.selectBorder).classList.remove('animateBorder');
+        var selectedBorder = document.querySelectorAll(elements.selectBorder);
+        for(var i = 0; i< selectedBorder.length; i++){
+            selectedBorder[i].classList.remove('animateBorder');
+        } 
         elements.shown = false;
+        changeAvatar();
         
         
     }
@@ -104,8 +107,6 @@ var appController = (function(){
     changeAvatar = function()
     {
         document.querySelector(elements.avatar).src='images/img' + newAvatar + '.png';
-        elements.avatar
-        //whichAvatar[i]
 
     }
 
