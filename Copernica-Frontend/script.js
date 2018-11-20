@@ -26,13 +26,14 @@
 
 appController = (function(){
     
-    var newAvatar = 1;
+    var newAvatar = 1;    
     var elements = {
         avatar: '.current_avatar',
         popover: '.popover',
         selectBorder: '.border',
         shown: false,    
     };
+    var allSelectedBorders = document.querySelectorAll(elements.selectBorder);
     
 
     setupEventListeners = function()
@@ -43,6 +44,7 @@ appController = (function(){
             if(!elements.shown){
                 expandMenu(); 
             } else{
+                
             hideMenu(); 
             }
         });       
@@ -56,7 +58,8 @@ appController = (function(){
             
         document.addEventListener('click', function(event){
             if ((elements.shown && !event.target.closest('.avatar_elements')) && 
-                (elements.shown && !event.target.closest('.your_avatar'))){
+            (elements.shown && !event.target.closest('.your_avatar'))){
+                
                 hideMenu();
             }
         });  
@@ -72,18 +75,17 @@ appController = (function(){
             
             elements.shown = true;
         }else{
-               // hideMenu();
+                hideMenu();
                 elements.shown = false;
             };
     };
 
     hideMenu = function() {
         document.querySelector(elements.popover).classList.remove('animate');
-        document.querySelector(elements.avatar).classList.remove('selected');
+        document.querySelector(elements.avatar).classList.remove('selected');        
         
-        var selectedBorder = document.querySelectorAll(elements.selectBorder);
-        for(var i = 0; i< selectedBorder.length; i++){
-            selectedBorder[i].classList.remove('animateBorder');
+        for(var i = 0; i< allSelectedBorders.length; i++){
+            allSelectedBorders[i].classList.remove('animateBorder');
         }; 
         elements.shown = false;
         changeAvatar();        
@@ -134,9 +136,9 @@ appController = (function(){
     {
         document.querySelector(elements.avatar).src='images/img' + newAvatar + '.png';
 
-       var selectedBorder = document.querySelectorAll(elements.selectBorder);
-        for(var i = 0; i< selectedBorder.length; i++){
-            selectedBorder[i].classList.remove('selected');
+        
+        for(var i = 0; i< allSelectedBorders.length; i++){
+            allSelectedBorders[i].classList.remove('selected');
         };
        // var chosenBorder = document.getElementById(elements.selectBorder);
         document.getElementById('border_' + newAvatar).classList.add("selected");
