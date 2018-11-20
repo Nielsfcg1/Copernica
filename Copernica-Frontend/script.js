@@ -15,16 +15,19 @@
 
 // click outside element
 
+// delete obsolete code
+
 
 
 
 
 var appController = (function(){
-    var loading, elements = {
+    var elements = {
         avatar: '.selected_avatar',
         popover: '.popover',
         selectAvatar: '.avatar',
         selectBorder: '.border',
+        animateBorder: 'border.animateBorder',
         shown: false,
     
     }
@@ -35,8 +38,13 @@ var appController = (function(){
             document.querySelector(elements.avatar).addEventListener('click', expandMenu);
         }
         
-       document.querySelector(elements.selectBorder).addEventListener('click', loadAnimation);
-       
+        document.querySelector(elements.selectBorder).addEventListener('click', loadAnimation);
+        var x = document.querySelectorAll(elements.selectBorder);
+        //.addEventListener("webkitAnimationEnd", hideMenu);
+       console.log(x);
+       for(var i = 0; i< x.length; i++){
+           x[i].addEventListener('webkitAnimationEnd', hideMenu);
+       }
        
         
     }
@@ -56,6 +64,8 @@ var appController = (function(){
 
     hideMenu = function() {
         document.querySelector(elements.popover).classList.remove ('animate');
+        document.querySelector(elements.selectBorder).classList.remove('animateBorder');
+        elements.shown = false;
         //is een andere class geworden
     }
     // el get passed from CSS div
