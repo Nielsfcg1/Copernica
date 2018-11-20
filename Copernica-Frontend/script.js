@@ -24,6 +24,7 @@ var appController = (function(){
         avatar: '.selected_avatar',
         popover: '.popover',
         selectAvatar: '.avatar',
+        selectBorder: '.border',
         shown: false,
     
     }
@@ -33,8 +34,8 @@ var appController = (function(){
         if(document.querySelector(elements.popover)){
             document.querySelector(elements.avatar).addEventListener('click', expandMenu);
         }
-
-       document.querySelector(elements.selectAvatar).addEventListener('click', loadAnimation);
+        
+       document.querySelector(elements.selectBorder).addEventListener('click', loadAnimation);
        
        
         
@@ -57,27 +58,26 @@ var appController = (function(){
         document.querySelector(elements.popover).classList.remove ('animate');
         //is een andere class geworden
     }
-
+    // el get passed from CSS div
     loadAnimation = function(el){
-        
         switch(el){
             case '1':
-            document.getElementById('1').classList.add("animate");
+            document.getElementById('border_1').classList.add("animateBorder");
             break;
             case '2':
-            document.getElementById('2').classList.add("animate");
+            document.getElementById('border_2').classList.add("animateBorder");
             break;
             case '3':
-            document.getElementById('3').classList.add("animate");
+            document.getElementById('border_3').classList.add("animateBorder");
             break;
             case '4':
-            document.getElementById('4').classList.add("animate");
+            document.getElementById('border_4').classList.add("animateBorder");
             break;
             case '5':
-            document.getElementById('5').classList.add("animate");
+            document.getElementById('border_5').classList.add("animateBorder");
             break;
             case '6':
-            document.getElementById('6').classList.add("animate");
+            document.getElementById('border_6').classList.add("animateBorder");
             break;
 
         }
