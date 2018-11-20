@@ -71,6 +71,7 @@ appController = (function(){
         
         if(elements.shown === false){
             document.querySelector(elements.popover).classList.add("animate");
+            document.querySelector(elements.popover).classList.remove("closed");
             document.querySelector(elements.avatar).classList.add('selected');
             
             elements.shown = true;
@@ -82,6 +83,7 @@ appController = (function(){
 
     hideMenu = function() {
         document.querySelector(elements.popover).classList.remove('animate');
+        document.querySelector(elements.popover).classList.add("closed");
         document.querySelector(elements.avatar).classList.remove('selected');        
         
         for(var i = 0; i< allSelectedBorders.length; i++){
@@ -128,7 +130,6 @@ appController = (function(){
             newAvatar = '6';
             deleteSelection();
             break;
-
         };
     };
 
@@ -140,12 +141,8 @@ appController = (function(){
         for(var i = 0; i< allSelectedBorders.length; i++){
             allSelectedBorders[i].classList.remove('selected');
         };
-       // var chosenBorder = document.getElementById(elements.selectBorder);
         document.getElementById('border_' + newAvatar).classList.add("selected");
     };
-
-
-    
 
 return {
     init: function()
@@ -155,7 +152,6 @@ return {
         changeAvatar();
     }
 }
-
 
 })();
 appController.init();

@@ -8,10 +8,17 @@ body {
     height: 100%;    
     margin-top: 10%;
 }
+p {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+}
 .background {
     background-image: url("images/background.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    padding-bottom: 20px;
 }
 .your_avatar {
     display: block;
@@ -38,24 +45,31 @@ body {
     border: 1px solid black;
     border-radius: 50%;
 }
-.popover{  
-    transform: scale(0) translateY(-20px);
-    transition: transform .2s;
+.popover {
+    transform: scale(0);
 }
-.popover.animate{ 
-    display: inline; 
-    margin-left: auto;
-    margin-right: auto;   
-    transform: scale(1) translateY(20px);
-    transition: all .5s;
-    
+.popover.closed{  
+    transform: scale(0);
+    animation: scaleDown .5s linear;
+}
+.popover.animate{     
+    transform: scale(1); 
+    animation: scaleUp .5s linear;    
+}
+@keyframes scaleUp {
+    from   {transform: scale(0);}
+    to {transform: scale(1);}
+}
+@keyframes scaleDown {
+    from   {transform: scale(1);}
+    to {transform: scale(0);}
 }
 
 .triangle {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 40px;
     position: relative;
     width: 0;
     height: 0;
@@ -120,13 +134,12 @@ body {
     border: 3px solid #7aa1b2;
     border-top: 3px solid #f9f9f9;
     border-radius: 50%;
-    transform: rotate(90);
     animation: spin 1s linear;
 }
 
 @keyframes spin {
-    0% {transform: rotate(0deg);}
-    100%{transform: rotate(360deg);}
+    from {transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
 }
 
 
