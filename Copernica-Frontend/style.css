@@ -4,11 +4,14 @@ Coperina exercise
 
 body {
     font-family: open Sans;
+    
+}
+.background {
     background-image: url("images/background.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    margin-top: 10%;
 }
-
 .your_avatar {
     display: block;
     margin-left: auto;
@@ -18,6 +21,7 @@ body {
 }
 .current_avatar{
     display: inline;
+    margin-top: 20px;
     border: 1px solid transparent;
     border-radius: 50%;
     width: 160px;
