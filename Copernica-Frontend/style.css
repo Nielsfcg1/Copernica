@@ -4,12 +4,18 @@ Coperina exercise
 
 body {
     font-family: open Sans;
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.page {
+
 }
 
 .your_avatar {
     display: block;
-    margin-left: 860px;
-    margin-right: 860px; 
+    margin-left: auto;
+    margin-right: auto; 
     width: 160px;
     height: 160px;
 }
@@ -31,11 +37,14 @@ body {
     border-radius: 50%;
 }
 .popover{
+    
     transform: scale(0) translateY(-20px);
     transition: transform .2s;
 }
 .popover.animate{
     display: inline;
+    margin-left: auto;
+    margin-right: auto;
     transform: scale(1) translateY(20px);
     transition: all .5s;
     
@@ -45,6 +54,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
     position: relative;
     width: 0;
     height: 0;
