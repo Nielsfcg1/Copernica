@@ -30,9 +30,7 @@ appController = (function(){
     var elements = {
         avatar: '.current_avatar',
         popover: '.popover',
-        selectAvatar: '.avatar',
         selectBorder: '.border',
-        animateBorder: 'border.animateBorder',
         shown: false,    
     };
     
@@ -50,7 +48,7 @@ appController = (function(){
             };  
             
         document.addEventListener('click', function(event){
-            if (event.target.closest('.avatar_elements') || event.target.closest('.top_avatar')){
+            if (event.target.closest('.avatar_elements') || event.target.closest('.your_avatar')){
                 
                 expandMenu();
             }else{
